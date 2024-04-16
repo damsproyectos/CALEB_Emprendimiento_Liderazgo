@@ -1,18 +1,15 @@
 <script lang="ts">
-import type { CartDetail, Product } from '../model/types';
+import type { Product } from '../model/types';
 import ProductCard from './ProductCard.vue';
-import Cart from './Cart.vue';
 
 export default{
     components: {
-        ProductCard,
-        Cart
+        ProductCard
     },
-    props: ['details'],
     data() {
         return {
-            products: <Array<Product>>[
-                { company: 'Marilyn Ortiz', service: 'Limpieza facial profunda', commercial_price: '100.000', caleb: '80.000', address: 'La Villa - Pereira', id: 4 },
+            products: [
+                { company: 'Marilyn Ortiz', service: 'Limpieza facial profunda', commercial_price: '100.000', caleb: '80.000', address: 'La Villa - Pereira', id: 4},
                 { company: 'Movi&Fisio Integral', service: 'Valoración + 6 terapias', commercial_price: '270.000', caleb: '80.000', address: 'La Villa - Pereira', id: 5 },
                 { company: 'Jeferson Zambrano P', service: 'Limpieza Dental', commercial_price: '80.000', caleb: '60.000', address: 'La Villa - Pereira', id: 6 },
                 { company: 'Dra. Premauer', service: 'Prevención Cancer', commercial_price: '50.000', caleb: '45.000', address: 'Cuba - Pereira', id: 7 },
@@ -30,14 +27,9 @@ export default{
                 { company: 'Tecnology', service: 'Microfono', commercial_price: '120.000', caleb: '80.000', address: 'La Villa - Pereira', id: 3 },
                 { company: 'Luis Arcila', service: 'Finanzas Personales', commercial_price: '2.000.000', caleb: '1.800.000', address: 'La Villa - Pereira', id: 8 },
                 { company: 'Luz María Martínez', service: 'Enfermería', commercial_price: '100.000', caleb: '80.000', address: 'La Villa - Pereira', id: 9 }
-            ]
-        };
-    },
-    methods: {
-        onProductAdded(productId: number) {
-            
+            ] as Product[]
         }
-    },
+    }
 }
 </script>
 
@@ -55,10 +47,9 @@ export default{
         </li>          
     </ul> -->    
         <v-row>
-            <v-col v-for="p in products" cols="4">
+            <v-col v-for="p in products" :key="p.id" cols="4">
                 <ProductCard    
-                    :product="p"
-                    @addProduct="onProductAdded(p.id)" />  <!--p se refiere al producto --- products es lista de producctos ------ product es la propiedad (props)-->  
+                    :product="p" />  <!--p se refiere al producto --- products es lista de producctos ------ product es la propiedad (props)-->  
             </v-col>
         </v-row>      
 </template>

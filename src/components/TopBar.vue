@@ -1,6 +1,6 @@
 <script lang="ts">
-import { useCartStore } from '@/stores/cart';
-import { RouterLink } from 'vue-router'  //RouterLink es el que nos permite definir enlaces hacia nuestras rutas
+// import { useCartStore } from '@/stores/cart';
+import { useCartStore } from '../stores/cart';
 
 export default {
     computed: {
