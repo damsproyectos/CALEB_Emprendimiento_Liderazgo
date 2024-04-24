@@ -25,7 +25,13 @@ export default {
     methods: {
         onAddButtonClick() {
             const cartStore = useCartStore();
-            cartStore.addProduct(this.product.id);
+            cartStore.addProduct(this.product);
+        }
+    },
+    computed: {
+        productImageUrl() {
+            return this.product.image 
+            ?? "https://cdn.vuetifyjs.com/images/cards/cooking.png";
         }
     }
 }
@@ -36,7 +42,7 @@ export default {
 
         <v-img
             height="250"
-            src="https://cdn.vuetifyjs.com/images/cards/cooking.png"
+            :src="productImageUrl"
             cover />
 
         <!-- <v-card-subtitle class="mt-2">

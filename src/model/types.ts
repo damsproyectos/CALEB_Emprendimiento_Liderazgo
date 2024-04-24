@@ -5,10 +5,11 @@ export interface Product {
     caleb: number;
     address: string;
     id: number;
+    image: string;
 }
 
 export interface CartDetail {
-    productId: number;
+    product: Product;
     quantity: number;
 }
 
