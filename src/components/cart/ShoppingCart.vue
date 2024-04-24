@@ -41,6 +41,11 @@ export default {
                     <th class="text-left">
                         Subtotal
                     </th>
+                    <th>
+                        <span class="d-sr-only">
+                            Eliminar
+                        </span>
+                    </th>
                 </tr>
                 </thead>
                 <tbody>

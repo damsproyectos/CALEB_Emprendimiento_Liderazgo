@@ -18,8 +18,9 @@ export default {
         <v-avatar
           class="me-4 "
           color="grey-darken-1"
-          size="32"
-        ></v-avatar>
+          size="32">
+          <v-img src="/img/caleb.jpeg" />
+          </v-avatar>
 
         <RouterLink to="/" custom v-slot="{navigate}">
           <v-btn prepend-icon="mdi-home-variant" :active="$route.name === 'home'" variant="text" @click="navigate">
