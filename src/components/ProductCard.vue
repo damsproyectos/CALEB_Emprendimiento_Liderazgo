@@ -1,7 +1,7 @@
 <script lang="ts">
 import { PropType } from 'vue';
 import type { Product } from '../model/types';
-import { useCartStore } from '@/stores/cart';
+import { useCartStore } from '@/stores/cart.ts';
 
 export default {
     // data() {

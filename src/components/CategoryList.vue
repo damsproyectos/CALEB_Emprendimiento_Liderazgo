@@ -5,19 +5,28 @@ import type { Category } from '../model/types';
 export default {
     data() {
         return {
-            categories: [{
-                id: 1,
-                name: 'Bellesalud'
-            }, {
-                id: 2,
-                name: 'Servicios'
-            }, {
-                id: 3,
-                name: 'Productos'
-            }, {
-                id: 4,
-                name: 'Comidas'
-            }] as Category[]
+            categories: [
+                {
+                    id: 1,
+                    name: 'Bellesalud',
+                    description: 'Belleza y salud'
+                }, 
+                {
+                    id: 2,
+                    name: 'Servicios',
+                    description: 'Servicios generales'
+                }, 
+                {
+                    id: 3,
+                    name: 'Productos',
+                    description: 'Productos varios'
+                }, 
+                {
+                    id: 4,
+                    name: 'Comidas',
+                    description: 'Restaurantes, comidas rápidas'
+                }
+            ] as Category[]
         }; 
     }
 }

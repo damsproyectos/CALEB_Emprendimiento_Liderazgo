@@ -6,6 +6,7 @@ export interface Product {
     address: string;
     id: number;
     image: string;
+    categoryId: number;
 }
 
 export interface CartDetail {
@@ -16,4 +17,5 @@ export interface CartDetail {
 export interface Category {
     id: number;
     name: string;
+    description: string;
 }
