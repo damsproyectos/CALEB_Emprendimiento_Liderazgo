@@ -10,6 +10,11 @@ const router = createRouter({
       component: HomeView
     },
     {
+      path: '/categories/:categoryId',  //Los dos puntos : se utilizan cuando se hace hace referencia a una variable
+      name: 'category',
+      component: () => import('../views/HomeView.vue')
+    },
+    {
       path: '/advertising',
       name: 'advertising',
       // route level code-splitting
