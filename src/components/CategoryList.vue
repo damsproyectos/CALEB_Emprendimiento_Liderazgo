@@ -1,10 +1,12 @@
 <script lang="ts">
-import { mapActions } from 'pinia';
 // import type { Category } from '@/model/types';
 import type { Category } from '../model/types';
-import { useProductsStore } from '../stores/products'
+import OrderOptions from './left/OrderOptions.vue';
 
 export default {
+    components: {
+        OrderOptions
+    },
     data() {
         return {
             categories: [
@@ -43,7 +45,6 @@ export default {
                 params: { categoryId }
             })
         },
-        ...mapActions(useProductsStore, ['orderByName', 'orderByPrice'])
     }
 }
 </script>
@@ -70,20 +71,7 @@ export default {
 
             <v-divider class="my-2"></v-divider>
 
-            <v-list-subheader>Orden</v-list-subheader>
-            <v-list-item
-            color="grey-lighten-4"
-            title="Por precio"
-            link
-            @click="orderByPrice"
-            ></v-list-item>
-
-            <v-list-item
-            color="grey-lighten-4"
-            title="Por nombre"
-            link
-            @click="orderByName"
-            ></v-list-item>
+            <OrderOptions />
         </v-list>
     </v-sheet>
 </template>
