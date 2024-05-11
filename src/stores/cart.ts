@@ -1,9 +1,11 @@
 import { defineStore } from 'pinia'
 import type { CartDetail, Product } from '@/model/types';
+import { useLocalStorage } from '@vueuse/core';  //useLocalStorage me permite mantener la información o productos agregados, en el carrito de compras, apesar de que cierre o se reinicie la página.
 
 export const useCartStore = defineStore('cart', {
   state: () => ({ 
-    details: [] as CartDetail[]
+    // details: [] as CartDetail[]
+    details: useLocalStorage<CartDetail[]>('CartDetails', []) 
    }),
   getters: {
     //doubleCount: (state) => state.count * 2,
@@ -22,6 +24,26 @@ export const useCartStore = defineStore('cart', {
       }); 
 
       return total;
+    },
+    whatsAppMessage(state) {
+      let message = 'Hola, quiero realizar la siguiente compra:\n\n';
+
+      state.details.forEach(d => {
+        message += `--------------------------------------------------\n`;
+        message += `Producto: ${d.product.service}\n`;
+        message += `Cantidad: ${d.quantity}\n`;
+        message += `Subtotal: $${d.quantity * d.product.caleb}\n`;
+        message += `--------------------------------------------------\n\n`;
+      });
+
+      message += `Total a pagar: $${this.totalAmount}\n\n`;
+      message += `¡Muchas gracias! 😃🖥️😊`
+
+      return encodeURI(message);
+    },
+    whatsAppLink() {
+      // return 'https://wa.me/573146494446?text=' + this.whatsAppMessage;
+      return 'https://api.whatsapp.com/send/?phone=573146494446&text=' + this.whatsAppMessage;
     }
   },
   actions: {

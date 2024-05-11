@@ -3,7 +3,7 @@ import { useCartStore } from '@/stores/cart';
 import { mapState } from 'pinia'
 export default {
     computed: {
-        ...mapState(useCartStore, ["totalAmount"])
+        ...mapState(useCartStore, ["totalAmount", "whatsAppLink"])
     }
 }
 </script>
@@ -16,7 +16,7 @@ export default {
             Total a pagar: ${{ totalAmount }}
         </v-card-subtitle>
         <v-card-text>
-            <v-btn variant="tonal" color="orange-lighten-2">
+            <v-btn :href="whatsAppLink" target="_blank" variant="tonal" color="orange-lighten-2">
                 Realizar pédido
             </v-btn>
         </v-card-text>
