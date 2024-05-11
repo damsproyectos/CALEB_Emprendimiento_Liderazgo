@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 import type { Product } from '@/model/types'
-import productsData from '../../public/data/products.json';
+// import productsData from '../data/products.json';
 
 // console.log(productsData); //Agregamos un console.log(productsData);para verificar cual es el contenido de productsData; para ver si realmente estamos leyendo bien los datos del archivo products.json, osea que vemos los datos en la consola; eso signifca que el import al store products.ts es ÉXITOSO 
 
@@ -8,7 +8,9 @@ export const useProductsStore = defineStore('products', {
     state: () => ({
         order: 'price' as string,
         categoryId: null as number|null,
-        _products: productsData as Product[]
+        // _products: productsData as Product[]
+        _products: [] as Product[],
+        loading: true
     }),
     getters: {
         products(state) {
@@ -46,6 +48,15 @@ export const useProductsStore = defineStore('products', {
         }
     },
     actions: {
+        fetchProducts() {
+            fetch('/data/products.json')
+                .then(response => response.json())
+                .then((data) => {
+                    // console.log(data);
+                    this._products = data;
+                    this.loading = false;
+                });
+        },
         selectCategory(categoryId: number) {
             this.categoryId = categoryId;
         },

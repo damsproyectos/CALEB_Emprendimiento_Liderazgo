@@ -2,6 +2,7 @@
 import ProductList from '@/components/ProductList.vue';
 import LeftMenu from '@/components/left/LeftMenu.vue';
 import { useProductsStore } from '../stores/products';
+import { useCategoriesStore } from '@/stores/categories';
 
 function updateCategoryFromRouteParams(categoryIdParam: string|string[]) {
   const productsStore = useProductsStore();
@@ -15,12 +16,25 @@ export default {
     LeftMenu
   },
   beforeRouteEnter(to) {
-    console.log('beforeRouteEnter', to.params);
+    // console.log('beforeRouteEnter', to.params);
     updateCategoryFromRouteParams(to.params.categoryId);
   },
   beforeRouteUpdate(to) {
-    console.log('beforeRouteUpdate', to.params);
+    // console.log('beforeRouteUpdate', to.params);
     updateCategoryFromRouteParams(to.params.categoryId);
+  },
+  mounted() {
+    console.log('mounted');
+
+    setTimeout(() => {      
+      const productsStore = useProductsStore();
+      productsStore.fetchProducts();
+    }, 4000);
+
+    setTimeout(() => {
+      const categoriesStore = useCategoriesStore();
+      categoriesStore.fetchCategories();
+    }, 2000);
   }
 }
 </script>

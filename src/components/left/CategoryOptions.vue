@@ -5,7 +5,7 @@ import { useCategoriesStore } from '../../stores/categories'
 
 export default {
     computed: {
-        ...mapState(useCategoriesStore, ['categories'])
+        ...mapState(useCategoriesStore, ['categories', 'loading'])
     },
     methods: {
         clearCategory() {
@@ -32,7 +32,10 @@ export default {
     :active="$route.name === 'home'"
     ></v-list-item>
 
+    <v-progress-linear v-if="loading" color="primary" indeterminate />
+
     <v-list-item 
+    v-else
     :active="$route.name === 'category' && Number($route.params.categoryId) === category.id"
     v-for="category in categories"
     :key="category.id"

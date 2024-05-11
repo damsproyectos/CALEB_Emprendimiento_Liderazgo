@@ -8,7 +8,7 @@ export default{
         ProductCard
     },
     computed: {
-        ...mapState(useProductsStore, ['products'])
+        ...mapState(useProductsStore, ['products', 'loading'])
     }
 }
 </script>
@@ -25,11 +25,15 @@ export default{
             ($ {{ product.caleb }})
             {{ product.adress }}
         </li>          
-    </ul> -->    
-        <v-row>
-            <v-col v-for="p in products" :key="p.id" cols="4">
-                <ProductCard    
-                    :product="p" />  <!--p se refiere al producto --- products es lista de producctos ------ product es la propiedad (props)-->  
-            </v-col>
-        </v-row>      
+    </ul> -->   
+    <div v-if="loading" class="d-flex justify-center align-center h-100">
+        <v-progress-circular color="primary" indeterminate :size="60" />
+    </div>
+
+    <v-row v-else>
+        <v-col v-for="p in products" :key="p.id" cols="4">
+            <ProductCard    
+                :product="p" />  <!--p se refiere al producto --- products es lista de producctos ------ product es la propiedad (props)-->  
+        </v-col>
+    </v-row>      
 </template>
