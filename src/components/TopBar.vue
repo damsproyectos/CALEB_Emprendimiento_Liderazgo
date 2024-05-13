@@ -23,40 +23,53 @@ export default {
           </v-avatar>
 
         <RouterLink to="/" custom v-slot="{navigate}">
-          <v-btn prepend-icon="mdi-home-variant" :active="$route.name === 'home' || $route.name === 'category'" variant="text" @click="navigate">
-            Home
+          <v-btn :active="$route.name === 'home' || $route.name === 'category'" variant="text" @click="navigate">
+            <v-icon class="mr-0 mr-sm-2" icon="mdi-home-variant" />
+            <span class="d-none d-sm-flex">Home</span>
           </v-btn>
         </RouterLink>
-        <RouterLink to="/advertising" custom v-slot="{navigate}">
-          <v-btn prepend-icon="mdi-advertisements" :active="$route.name === 'advertising'" variant="text" @click="navigate">
-            Advertising
+
+        <!-- <RouterLink to="/advertising" custom v-slot="{navigate}">
+          <v-btn :active="$route.name === 'advertising'" variant="text" @click="navigate">
+            <v-icon class="mr-0 mr-sm-2" icon="mdi-advertisements" />
+            <span class="d-none d-sm-flex">Advertising</span>
           </v-btn>
-        </RouterLink>
-        <RouterLink to="/project" custom v-slot="{navigate}">
-          <v-btn prepend-icon="mdi-projector-screen" :active="$route.name === 'project'" variant="text" @click="navigate">
-            Project
+        </RouterLink> -->
+
+        <!-- <RouterLink to="/project" custom v-slot="{navigate}">
+          <v-btn :active="$route.name === 'project'" variant="text" @click="navigate">
+            <v-icon class="mr-0 mr-sm-2" icon="mdi-projector-screen" />
+            <span class="d-none d-sm-flex">Project</span>
           </v-btn>
-        </RouterLink>
-        <RouterLink to="/course" custom v-slot="{navigate}">
-          <v-btn prepend-icon="mdi-school" :active="$route.name === 'course'" variant="text" @click="navigate">
-            Course
+        </RouterLink> -->
+
+        <!-- <RouterLink to="/course" custom v-slot="{navigate}">
+          <v-btn :active="$route.name === 'course'" variant="text" @click="navigate">
+            <v-icon class="mr-0 mr-sm-2" icon="mdi-school" />
+            <span class="d-none d-sm-flex">Course</span>
           </v-btn>
-        </RouterLink>
-        <RouterLink to="/classified" custom v-slot="{navigate}">
-          <v-btn prepend-icon="mdi-phone-classic" :active="$route.name === 'classified'" variant="text" @click="navigate">
-            Classified
+        </RouterLink> -->
+
+        <!-- <RouterLink to="/classified" custom v-slot="{navigate}">
+          <v-btn :active="$route.name === 'classified'" variant="text" @click="navigate">
+            <v-icon class="mr-0 mr-sm-2" icon="mdi-phone-classic" />
+            <span class="d-none d-sm-flex">Classified</span>
           </v-btn>
-        </RouterLink>
+        </RouterLink> -->
+
         <RouterLink to="/cart" custom v-slot="{navigate}">
           <v-badge :content="itemsCount" :model-value="itemsCount > 0" color="orange-lighten-2">
-            <v-btn prepend-icon="mdi-cart " :active="$route.name === 'cart'" variant="text" @click="navigate">
-              Cart
+            <v-btn :active="$route.name === 'cart'" variant="text" @click="navigate">
+              <v-icon class="mr-0 mr-sm-2" icon="mdi-cart" />
+              <span class="d-none d-sm-flex">Cart</span>
             </v-btn>  
           </v-badge>          
         </RouterLink>
+
         <RouterLink to="/about" custom v-slot="{navigate}">
-          <v-btn prepend-icon="mdi-information" :active="$route.name === 'about'" variant="text" @click="navigate">
-            About
+          <v-btn :active="$route.name === 'about'" variant="text" @click="navigate">
+            <v-icon class="mr-0 mr-sm-2" icon="mdi-information" />
+            <span class="d-none d-sm-flex">About</span>
           </v-btn>
         </RouterLink>   
            

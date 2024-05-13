@@ -31,7 +31,7 @@ export default{
     </div>
 
     <v-row v-else>
-        <v-col v-for="p in products" :key="p.id" cols="4">
+        <v-col v-for="p in products" :key="p.id" cols="12" sm="6" md="4" lg="3">
             <ProductCard    
                 :product="p" />  <!--p se refiere al producto --- products es lista de producctos ------ product es la propiedad (props)-->  
         </v-col>
