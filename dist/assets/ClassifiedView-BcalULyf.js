@@ -1,0 +1,1 @@
+import{_ as e,o as s,c as o,b as t}from"./index-BbRBmh_y.js";const c={},_={class:"about"},a=t("h1",null,"CLASISFICADOS PARA TRABAJOS",-1),n=[a];function r(i,d){return s(),o("div",_,n)}const f=e(c,[["render",r]]);export{f as default};

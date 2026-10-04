@@ -1,0 +1,1 @@
+import{_ as e}from"./TheWelcome.vue_vue_type_script_setup_true_lang-DWlY-13S.js";import{d as a,o as n,c as o,a as t}from"./index-BbRBmh_y.js";const i=a({__name:"AdvertisingView",setup(r){return(s,c)=>(n(),o("main",null,[t(e)]))}});export{i as default};

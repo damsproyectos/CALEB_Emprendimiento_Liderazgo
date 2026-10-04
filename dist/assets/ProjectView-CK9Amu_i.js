@@ -1,0 +1,1 @@
+import{_ as e}from"./TheWelcome.vue_vue_type_script_setup_true_lang-DWlY-13S.js";import{d as a,o,c as t,a as n}from"./index-BbRBmh_y.js";const p=a({__name:"ProjectView",setup(r){return(c,s)=>(o(),t("main",null,[n(e)]))}});export{p as default};

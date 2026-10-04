@@ -1,0 +1,1 @@
+import{_ as e,o as s,c as o,b as t}from"./index-BbRBmh_y.js";const c={},n={class:"about"},_=t("h1",null,"This is an COURSE",-1),a=[_];function r(i,d){return s(),o("div",n,a)}const f=e(c,[["render",r]]);export{f as default};
